@@ -1,0 +1,16 @@
+sequenceDiagram
+    user->>+browser: open the https://studies.cs.helsinki.fi/exampleapp/notes
+    browser->>+server: take files
+    activate server
+    server-->>-browser: gives files
+    deactivate server
+    user-->>user: read notes
+    user -->>+browser: new note
+    browser -->>+server: save note in /exampleapp/new_note with method POST
+    activate server
+    deactivate server
+    browser -->>browser: restart
+    browser->>+server: take files
+    activate server
+    server-->>-browser: gives files
+    deactivate server

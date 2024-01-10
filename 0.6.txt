@@ -1,0 +1,12 @@
+sequenceDiagram
+    user->>+browser: open the https://studies.cs.helsinki.fi/exampleapp/spa
+    browser->>+server: take file HTML
+    activate server
+    server-->>-browser: gives file HTML
+    deactivate server
+    browser-->>browser: JavaScript run HTML
+    user-->>user: read notes
+    user -->>+browser: new note
+    browser-->>+server: save note as JSON file
+    browser-->>browser: show new note
+    Note right of browser: The browser does not restart, it shows the new note on the same page
